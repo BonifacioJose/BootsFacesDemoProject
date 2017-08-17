@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"      
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <title>WildFlyQuickstart2</title>
+        <f:metadata>
+            <f:viewParam name="id" value="#{indexController.count}"></f:viewParam>     
+            <f:viewParam name="name" value="#{indexController.teste}"></f:viewParam>      
+        </f:metadata>
+    </h:head>    
+    <h:body> 
+        <h:form id="formPrincipal">
+            <div jsf:id="count">#{indexController.count}</div>
+            <div jsf:id="name">#{indexController.teste}</div>
+            <b:commandButton 
+                value="primary"
+                look="primary"
+                actionListener="#{indexController.setCount(indexController.count + 1)}"
+                update="formPrincipal:count"/>
+        </h:form>
+    </h:body>  
+</html>
